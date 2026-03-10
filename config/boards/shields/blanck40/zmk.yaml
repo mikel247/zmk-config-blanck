@@ -1,0 +1,9 @@
+file_format: "1"
+id: blanck40
+name: blanck40
+type: shield
+url: https://github.com/mikel247/zmk-config-blanck
+requires:
+  - nrf52840
+features:
+  - keys
