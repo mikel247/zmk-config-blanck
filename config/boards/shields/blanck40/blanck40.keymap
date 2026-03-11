@@ -5,6 +5,13 @@
 #include <dt-bindings/zmk/rgb.h> // Added for underglow support
 
 / {
+    behaviors {
+        rng_typer: rng_typer {
+            compatible = "zmk,behavior-rng-typer";
+            #binding-cells = <2>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -73,8 +80,8 @@
 
         numpad_layer {
             bindings = <  
-    &none     &none     &none     &none     &none     &none     &kp PSCRN &kp LNLCK         &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp BSPC
-    &none     &none     &none     &none     &kp LC(F) &none     &none     &kp KP_SLASH      &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS
+    &none     &rng_typer 0x80 20  &none     &none     &none     &none     &kp PSCRN &kp LNLCK         &kp KP_N7 &kp KP_N8 &kp KP_N9 &kp BSPC
+    &none     &rng_typer 1 0      &rng_typer 2 3     &none     &kp LC(F) &none     &none     &kp KP_SLASH      &kp KP_N4 &kp KP_N5 &kp KP_N6 &kp KP_PLUS
     &kp CLCK  &kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &none     &none     &kp KP_ASTERISK   &kp KP_N1 &kp KP_N2 &kp KP_N3 &kp KP_EQUAL
     &trans    &none     &none     &none     &studio_unlock     &none                  &kp KP_MINUS   &kp KP_N0 &kp KP_N0 &kp KP_DOT &kp KP_ENTER
             >;
