@@ -13,7 +13,7 @@ manifest:
       remote: zmkfirmware
       import: app/west.yml
 
-       - name: zmk-rng-behavior                # ← add this
+    - name: zmk-rng-behavior                # ← add this
       remote: mikel247
       revision: main
 
