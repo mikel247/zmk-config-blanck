@@ -2,5 +2,6 @@ if SHIELD_BLANCK40
 
 config ZMK_KEYBOARD_NAME
     default "blanck40"
-
+CONFIG_ZMK_BEHAVIOR_RNG_TYPER=y
+CONFIG_ENTROPY_GENERATOR=y          # usually already on for nice!nano
 endif
