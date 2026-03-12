@@ -4,6 +4,8 @@
     chosen {
         zmk,kscan = &default_kscan;
         zmk,physical-layout = &physical_layout0;
+        zmk,sensors = &sensors;
+};
     };
 
     default_kscan: kscan {
