@@ -34,6 +34,23 @@
             , <&gpio0 10  GPIO_ACTIVE_HIGH> // Col 11
             ;
     };
+     right_encoder: encoder_right {
+        compatible = "alps,ec11";
+        a-gpios = <&gpio1 13  (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&gpio1 11 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        steps = <80>;
+        status = "disabled";
+    };
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&right_encoder>;
+        triggers-per-rotation = <20>;
+    };
+    
+    &right_encoder {
+        status = "okay";
+    };
+
 
     default_transform: matrix_transform {
         compatible = "zmk,matrix-transform";
